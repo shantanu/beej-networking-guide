@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
     }
 
     memset(&hints, 0, sizeof(hints));   // make sure the struct is empty
-    hints.ai_family = AF_INET6;        // don't care IPv4 or IPv6
+    hints.ai_family = AF_UNSPEC;        // don't care IPv4 or IPv6
     hints.ai_socktype = SOCK_STREAM;    // TCP stream sockets
 
     if ((status = getaddrinfo(argv[1], NULL, &hints, &res)) != 0) {
